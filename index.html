@@ -3,29 +3,33 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Calculator</title>
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" id="display" readonly>
-    <div class="buttons">
-      <button onclick="appendToDisplay('7')">7</button>
-      <button onclick="appendToDisplay('8')">8</button>
-      <button onclick="appendToDisplay('9')">9</button>
-      <button onclick="appendToDisplay('/')">/</button>
-      <button onclick="appendToDisplay('4')">4</button>
-      <button onclick="appendToDisplay('5')">5</button>
-      <button onclick="appendToDisplay('6')">6</button>
-      <button onclick="appendToDisplay('*')">*</button>
-      <button onclick="appendToDisplay('1')">1</button>
-      <button onclick="appendToDisplay('2')">2</button>
-      <button onclick="appendToDisplay('3')">3</button>
-      <button onclick="appendToDisplay('-')">-</button>
-      <button onclick="appendToDisplay('0')">0</button>
-      <button onclick="appendToDisplay('.')">.</button>
-      <button onclick="calculate()">=</button>
-      <button onclick="appendToDisplay('+')">+</button>
-      <button onclick="clearDisplay()">C</button>
+  <div class="authentication-container">
+    <div class="auth-card" id="authCard">
+      <div class="tabs">
+        <button class="tab" onclick="showLogin()">Login</button>
+        <button class="tab" onclick="showSignup()">Sign Up</button>
+      </div>
+      <div id="loginForm" class="auth-form">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="loginMessage" class="message"></p>
+      </div>
+      <div id="signupForm" class="auth-form" style="display: none;">
+        <h2>Sign Up</h2>
+        <input type="text" id="signupUsername" placeholder="Username">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <button onclick="signup()">Sign Up</button>
+        <p id="signupMessage" class="message"></p>
+      </div>
+    </div>
+    <div class="welcome-card" id="welcomeCard" style="display: none;">
+      <h2>Welcome, <span id="welcomeUsername"></span>!</h2>
+      <p>You are now logged in.</p>
+      <button onclick="logout()">Log Out</button>
     </div>
   </div>
   
